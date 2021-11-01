@@ -33,6 +33,24 @@ public class RESTCONT {
 
 
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/get_test_zong_header")
+    public void getTestZongHe(
+            @RequestHeader Map<String, String> headers, HttpServletResponse response, @RequestParam String vinfo) throws IOException {
+        System.out.println("get test zong header");
+        String msisdn = headers.get("msisdn");
+        if (msisdn == null) {
+            System.out.println("Msisdn Not Found ");
+            response.sendRedirect("https://gamez-frontend.noeticworld.com?msisdn=not_found&vinfo=" + vinfo);
+        } else {
+            try {
+                response.sendRedirect("https://gamez-frontend.noeticworld.com?msisdn=" + (msisdn) + "&vinfo=" + vinfo);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
 
 
