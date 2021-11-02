@@ -18,7 +18,7 @@ public class RESTCONT {
         if (msisdn == null) {
             //    log.info("Msisdn Not Found");
             System.out.println("msisdn not found");
-            response.sendRedirect("https://game-now.noeticworld.com//index.php?msisdn=not_found&vinfo=" + vinfo);
+            response.sendRedirect("https://game-now.noeticworld.com/index.php?msisdn=not_found&vinfo=" + vinfo);
         } else {
             try {
                 //log.info("Msisdn Found: " + msisdn);
